@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>ROBOTS</title>
-	<meta charset="utf-8">
+    <title>ROBOTS</title>
+    <meta charset="utf-8">
 
-	<link href="Style_Start.css" rel="stylesheet">
-	<script src="scripts.js"></script>
+    <link href="Style_Start.css" rel="stylesheet">
+    <script src="scripts.js"></script>
 
-	<meta name="wiewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="wiewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQxkOzDX2lCk4Rm9h1LS2_8qwA5GYh5_U"></script>
+        <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
 </head>
 
-
 <body>
-<nav class="navbar navbar-expand-lg bg-dark">
-  
-      <div class="navbar-header" >
-        <a href="WebApp_Start.html" class="navbar-brand text-light"> ROBOTS </a>
-    </div>
-    <div class="ml-auto">
-<div class="dropdown">
- <a href="#" class=" dropdown-toggle text-light" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <nav class="navbar navbar-expand-lg bg-dark">
+
+        <div class="navbar-header">
+            <a href="WebApp_Start.html" class="navbar-brand text-light"> ROBOTS </a>
+        </div>
+        <div class="ml-auto">
+            <div class="dropdown">
+                <a href="#" class=" dropdown-toggle text-light" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    Имя пользователя
   </a>
-<div class="dropdown-menu">
+                <div class="dropdown-menu">
 
-  <a class="dropdown-item " href="Member.html">Мои данные</a>
-  <a class="dropdown-item " href="History.html">История заказов</a>
-</div>
-</div>
-</div>
+                    <a class="dropdown-item " href="Member.html">Мои данные</a>
+                    <a class="dropdown-item " href="History.html">История заказов</a>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    
-<div class="row">
+    <div class="row">
 
-<input class="form-control col-lg-8 offset-lg-2 mt-3 col-10 offset-1" type="search" placeholder="Адрес" aria-label="Имя">
-  
-<div class="card mb-3 col-lg-4 offset-lg-2 my-3 col-7 offset-1" >
-  <div class="row no-gutters">
-    <div class="col-4">
-      <img src="new-style.jpg" class="card-img" alt="...">
-    </div>
-    <div class="col-8">
-      <div class="card-body">
-        <h5 class="card-title">Робот-X</h5>
-        <p class="card-text">Робот, выбранный вами ранее.</p>
-      </div>
-    </div>
+        <input class="form-control col-lg-8 offset-lg-2 mt-3 col-10 offset-1" type="search" placeholder="Адрес" aria-label="Имя">
+
+        <div class="card mb-3 col-lg-4 offset-lg-2 my-3 col-7 offset-1">
+            <div class="row no-gutters">
+                <div class="col-4">
+                    <img src="new-style.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Робот-X</h5>
+                        <p class="card-text">Робот, выбранный вами ранее.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+          
   </div>
-</div>
-
-<div>
-
+ <div class="col-lg-8 offset-lg-2 mt-3 col-12 offset-0">
+<div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQxkOzDX2lCk4Rm9h1LS2_8qwA5GYh5_U&callback=initMap"
+    async defer></script>
+  </div>
 </body>

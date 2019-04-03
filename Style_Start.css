@@ -9,3 +9,7 @@ p
 	font-weight: lighter;
 	font-size: 15px;
 }
+#map {
+        height: 500px;
+      }
+      
